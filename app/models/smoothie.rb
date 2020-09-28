@@ -1,2 +1,0 @@
-class Smoothie < ApplicationRecord
-end
