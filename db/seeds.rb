@@ -14,10 +14,23 @@ puts 'DB cleaned!'
 
 puts 'creating ingredients'
 Ingredient.create!(name: 'frozen banana')
-Ingredient.create!(name: 'pineapple chunks')
+Ingredient.create!(name: 'protein powder')
+Ingredient.create!(name: 'chia seeds')
+Ingredient.create!(name: 'flax seeds')
+Ingredient.create!(name: 'peanut butter')
+Ingredient.create!(name: 'spinach')
+Ingredient.create!(name: 'kale')
+Ingredient.create!(name: 'mixed berries')
 Ingredient.create!(name: 'milk')
+Ingredient.create!(name: 'yoghurt')
 Ingredient.create!(name: 'honey')
-Ingredient.create!(name: 'syrup')
+Ingredient.create!(name: 'maple syrup')
+Ingredient.create!(name: 'coffee')
+Ingredient.create!(name: 'cocoa powder')
+Ingredient.create!(name: 'strawberries')
+Ingredient.create!(name: 'pineapple chuncks')
+Ingredient.create!(name: 'orange')
+Ingredient.create!(name: 'vanilla extract')
 
 # -----------------------------------------------------
 puts 'destroying all smoothies!'
