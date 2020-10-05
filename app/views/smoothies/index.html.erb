@@ -1,13 +1,17 @@
-<h1>Smoothies</h1>
-<% @smoothies.each do |smoothie| %>
-  <%= smoothie.name %>
-<% end %>
+<div class="container">
+  <h1 class="mt-3 mb-3" style="display: flex; justify-content: center;">Smoothies</h1>
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
-  <div class="card-body">
-    <h5 class="card-title">Smoothies</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Recipe</a>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top crop" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
+    <div class="card-body">
+      <h5 class="card-title">
+        <% @smoothies.each do |smoothie| %>
+          <%= smoothie.name %>
+        <% end %>
+      </h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Recipe</a>
+    </div>
   </div>
+
 </div>
