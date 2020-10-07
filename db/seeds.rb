@@ -42,5 +42,7 @@ puts 'DB cleaned'
 puts 'creating smoothies!'
 
 Smoothie.create!(name: 'Pina Colada')
+Smoothie.create!(name: 'Mocha')
+Smoothie.create!(name: 'Mixed Berry')
 # ----------------------------------------------------
 puts 'Completed!'
