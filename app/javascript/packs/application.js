@@ -4,6 +4,7 @@
 // that code so it'll be compiled.
 import 'bootstrap';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { titleAnimation } from '../components/titleAnimation';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
@@ -13,6 +14,7 @@ require("channels")
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
   initUpdateNavbarOnScroll();
+  titleAnimation();
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
