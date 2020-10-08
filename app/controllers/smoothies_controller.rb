@@ -1,6 +1,7 @@
 class SmoothiesController < ApplicationController
-  def index
+  def home
     @smoothies = Smoothie.all
+    @smoothie = Smoothie.new
   end
 
   def show
