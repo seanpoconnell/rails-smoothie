@@ -1,11 +1,13 @@
 class SmoothiesController < ApplicationController
-  def index
+  def home
     @smoothies = Smoothie.all
+    @smoothie = Smoothie.new
+    @dose = Dose.new
   end
 
   def show
     @smoothie = Smoothie.find(params[:id])
-    @does = Dose.new
+    @dose = Dose.new
   end
 
   def new
