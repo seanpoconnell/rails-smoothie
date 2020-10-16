@@ -32,11 +32,11 @@ Ingredient.create!(name: 'pineapple chuncks')
 Ingredient.create!(name: 'orange')
 Ingredient.create!(name: 'vanilla extract')
 
-puts 'creating doses!'
-Doses.create!(description: 'ml')
-Doses.create!(description: 'tsp')
-Doses.create!(description: 'tbsp')
-Doses.create!(description: 'cup')
+# puts 'creating doses!'
+# Dose.create!(description: 'ml')
+# Dose.create!(description: 'tsp')
+# Dose.create!(description: 'tbsp')
+# Dose.create!(description: 'cup')
 
 # -----------------------------------------------------
 puts 'destroying all smoothies!'
