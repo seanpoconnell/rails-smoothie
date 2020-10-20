@@ -17,15 +17,13 @@ class SmoothiesController < ApplicationController
   def create
     @smoothie = Smoothie.new(smoothie_params)
     if @smoothie.save
-      redirect_to smoothie_path(@smoothie)
-    else
-      render :new
+      redirect_to smoothy_path(@smoothie)
     end
   end
 
   private
 
   def smoothie_params
-    params.require(:smoothie).permit(:name)
+    params.require(:smoothie).permit(:name, :ingredient, :dose)
   end
 end
