@@ -6,13 +6,28 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# -----------------------------------------------------
+
+puts 'destroying all doses!'
+Dose.delete_all
+Dose.reset_pk_sequence
+
+puts 'destroying all smoothies!'
+Smoothie.delete_all
+Smoothie.reset_pk_sequence
+
 puts 'destroying all ingredients!'
 Ingredient.delete_all
 Ingredient.reset_pk_sequence
-puts 'DB cleaned!'
 
-puts 'creating ingredients'
+puts 'DB cleaned'
+# -----------------------------------------------------
+puts 'creating smoothies!'
+Smoothie.create!(name: 'Pina Colada')
+Smoothie.create!(name: 'Mocha')
+Smoothie.create!(name: 'Mixed Berry')
+
+# ----------------------------------------------------
+puts 'creating ingredients!'
 Ingredient.create!(name: 'frozen banana')
 Ingredient.create!(name: 'protein powder')
 Ingredient.create!(name: 'chia seeds')
@@ -32,23 +47,12 @@ Ingredient.create!(name: 'pineapple chuncks')
 Ingredient.create!(name: 'orange')
 Ingredient.create!(name: 'vanilla extract')
 
-# puts 'creating doses!'
-# Dose.create!(description: 'ml')
+# -----------------------------------------------------
+puts 'creating doses!'
+Dose.create!(description: '5 ml', smoothie_id: 1, ingredient_id: 1)
 # Dose.create!(description: 'tsp')
 # Dose.create!(description: 'tbsp')
 # Dose.create!(description: 'cup')
 
 # -----------------------------------------------------
-puts 'destroying all smoothies!'
-Smoothie.delete_all
-Smoothie.reset_pk_sequence
-# Smoothie.destroy_all
-puts 'DB cleaned'
-
-puts 'creating smoothies!'
-
-Smoothie.create!(name: 'Pina Colada')
-Smoothie.create!(name: 'Mocha')
-Smoothie.create!(name: 'Mixed Berry')
-# ----------------------------------------------------
 puts 'Completed!'

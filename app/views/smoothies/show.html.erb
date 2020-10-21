@@ -9,7 +9,7 @@
         <%= @smoothie.name %>
       </h1>
       <h5>Ingredients</h5>
-      <h5>Method</h5>
+      <h7><%= Dose.find(params[:id].to_i).description %></h7>
     </div>
   </div>
 </div>
