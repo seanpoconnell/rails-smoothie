@@ -49,7 +49,9 @@ Ingredient.create!(name: 'vanilla extract')
 
 # -----------------------------------------------------
 puts 'creating doses!'
-Dose.create!(description: '5 ml', smoothie_id: 1, ingredient_id: 1)
+Dose.create!(description: '1', smoothie_id: 1, ingredient_id: 1)
+Dose.create!(description: '1 cup', smoothie_id: 1, ingredient_id: 2)
+Dose.create!(description: '1 tbsp', smoothie_id: 1, ingredient_id: 3)
 # Dose.create!(description: 'tsp')
 # Dose.create!(description: 'tbsp')
 # Dose.create!(description: 'cup')
