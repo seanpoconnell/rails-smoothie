@@ -25,14 +25,7 @@
   <%= simple_form_for @smoothie do |f| %>
     <%= f.input :name, label: "Smoothie name" %>
     <%= f.input :ingredients, label: "ingredient" %>
-    <%= f.input :doses, label: "dose", :collection => %w[ml tsp tbsp cup] %>
+    <%= f.input :doses, label: "dose" %>
     <%= f.submit class:'btn btn-primary' %>
   <% end %>
-
-  <%#= simple_form_for @dose do |f| %>
-    <%#= f.input :description %>
-    <%#= f.association :ingredient %>
-    <%#= f.button :submit, class: 'btn btn-primary' %>
-  <%# end %>
-
 </div>

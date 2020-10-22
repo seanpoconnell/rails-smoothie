@@ -10,11 +10,8 @@ class DosesController < ApplicationController
     @dose.smoothie = @smoothie
     # instance - info - id
     # @human.name (Sean) = @name (5)
-    if @dose.save
-      redirect_to smoothie_path(@smoothie)
-    else
-      render 'smoothies/new'
-    end
+    @dose.save
+    redirect_to smoothy_path(@smoothie)
   end
 
   def destroy
@@ -26,11 +23,11 @@ class DosesController < ApplicationController
   private
 
   def fetch_smoothie
-    @smoothie = Smoothie.find(params[:smoothie_id])
+    @smoothie = Smoothie.find(params[:smoothy_id])
   end
 
   def dose_params
-    params.require(:dose).permit(:description, :ingredient_id)
+    params.require(:dose).permit(:description)
   end
 end
 
