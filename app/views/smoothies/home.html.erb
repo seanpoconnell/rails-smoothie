@@ -14,7 +14,7 @@
           <%= smoothie.name %>
         </h5>
         <p class="card-text">some text</p>
-        <a href="#" class="btn btn-primary">Recipe</a>
+        <%= link_to 'Recipe', smoothy_path(smoothie), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
