@@ -15,7 +15,7 @@
           <%= smoothie.name %>
         </h5>
         <p class="card-text">some text</p>
-        <a href="#" class="btn btn-primary">Recipe</a>
+        <%= link_to 'Recipe', smoothy_path(smoothie), class: "btn btn-primary" %>
       </div>
     </div>
   <% end %>
@@ -28,11 +28,5 @@
     <%= f.input :doses , label: "Dosage" %>
     <%= f.input :ingredients , label: "Ingredient" %>
     <%= f.submit class:'btn btn-primary' %>
-  <% end %>
-
-  <%= simple_form_for [@smoothie, @dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
   <% end %>
 </div>
