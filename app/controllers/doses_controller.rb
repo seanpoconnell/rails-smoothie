@@ -10,14 +10,15 @@ class DosesController < ApplicationController
     # @dose.ingredient_id must = the ingredient_id not the name
     # user inputs name
     # to select the ingredient from params: params[:dose][:ingredient]
-    @ingredient.new
-    
     @dose = Dose.new(dose_params)
+    
+    # this currently does not do anything
     @dose.ingredient_id = params[:dose][:ingredient]
     @dose.smoothie = @smoothie
     # instance - info - id
     # @human.name (Sean) = @name (5)
     @dose.save
+    raise
     redirect_to smoothy_path(@smoothie)
   end
 
