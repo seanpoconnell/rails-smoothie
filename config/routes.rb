@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :smoothies, only: [:home, :show, :new, :create] do
     resources :doses, only: [:create, :new]
   end
-  resources :doses, only: [:destroy]
 end

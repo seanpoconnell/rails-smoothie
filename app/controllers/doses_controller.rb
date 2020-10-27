@@ -3,21 +3,22 @@ class DosesController < ApplicationController
 
   def new
     @dose = Dose.new
+    @ingredient = Ingredient.new
   end
 
   def create
+    # @dose.ingredient_id must = the ingredient_id not the name
+    # user inputs name
+    # to select the ingredient from params: params[:dose][:ingredient]
+    @ingredient.new
+    
     @dose = Dose.new(dose_params)
+    @dose.ingredient_id = params[:dose][:ingredient]
     @dose.smoothie = @smoothie
     # instance - info - id
     # @human.name (Sean) = @name (5)
     @dose.save
     redirect_to smoothy_path(@smoothie)
-  end
-
-  def destroy
-    @dose = Dose.find(params[:id])
-    @dose.destroy
-    redirect_to smoothie_path(@dose.smoothie)
   end
 
   private

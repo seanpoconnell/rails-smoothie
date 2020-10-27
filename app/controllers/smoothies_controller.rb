@@ -2,12 +2,10 @@ class SmoothiesController < ApplicationController
   def home
     @smoothies = Smoothie.all
     @smoothie = Smoothie.new
-    @dose = Dose.new
   end
 
   def show
     @smoothie = Smoothie.find(params[:id])
-    @dose = Dose.new
   end
 
   def new
