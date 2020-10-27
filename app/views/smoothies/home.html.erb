@@ -29,10 +29,4 @@
     <%= f.input :ingredients , label: "Ingredient" %>
     <%= f.submit class:'btn btn-primary' %>
   <% end %>
-
-  <%= simple_form_for [@smoothie, @dose] do |f| %>
-    <%= f.input :description %>
-    <%= f.association :ingredient %>
-    <%= f.button :submit, class: 'btn btn-primary' %>
-  <% end %>
 </div>
