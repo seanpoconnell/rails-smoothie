@@ -7,26 +7,31 @@
 
 <div class="container" style="display: flex; justify-content: space-around;">
 
-  <% @smoothies.each do |smoothie| %>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top crop" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
-      <div class="card-body">
-        <h5 class="card-title">
-          <%= smoothie.name %>
-        </h5>
-        <p class="card-text">some text</p>
-        <%= link_to 'Recipe', smoothy_path(smoothie), class: "btn btn-primary" %>
+  <div class="row">
+    <% @smoothies.each do |smoothie| %>
+      <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
+        <div class="card m-0 p-0">
+              <img class="card-img-top crop" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <%= smoothie.name %>
+                </h5>
+                <p class="card-text">some text</p>
+                <%= link_to 'Recipe', smoothy_path(smoothie), class: "btn btn-primary" %>
+              </div>
+        </div>
       </div>
-    </div>
-  <% end %>
-
+    <% end %>
+  <div>
 </div>
 
-<div class="container" style="width: 25em; margin-bottom: 25em; margin-top: 10em">
-  <%= simple_form_for @smoothie do |f| %>
-    <%= f.input :name , label: "Smoothie name" %>
-    <%= f.input :doses , label: "Dosage" %>
-    <%= f.input :ingredients , label: "Ingredient" %>
-    <%= f.submit class:'btn btn-primary' %>
-  <% end %>
+<div class="container">
+  <div class="container" style="width: 25em; margin-bottom: 25em; margin-top: 10em">
+    <%= simple_form_for @smoothie do |f| %>
+      <%= f.input :name , label: "Smoothie name" %>
+      <%= f.input :doses , label: "Dosage" %>
+      <%= f.input :ingredients , label: "Ingredient" %>
+      <%= f.submit class:'btn btn-primary' %>
+    <% end %>
+  </div>
 </div>
