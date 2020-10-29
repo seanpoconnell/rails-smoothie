@@ -7,13 +7,11 @@ class DosesController < ApplicationController
   end
 
   def create
-    # @dose.ingredient_id must = the ingredient_id not the name
-    # user inputs name
-    # to select the ingredient from params: params[:dose][:ingredient]
     @dose = Dose.new(dose_params)
-    
-    # this currently does not do anything
+    # assign the picked ingredient from the params to the @dose.ingredient
+    # to select the ingredient from params: params[:dose][:ingredient]
     @dose.ingredient_id = params[:dose][:ingredient]
+    # @dose.smoothie has an empty id. Assign it an id (and name) by equating it to @smoothie (has smoothie_id and name)
     @dose.smoothie = @smoothie
     # instance - info - id
     # @human.name (Sean) = @name (5)
