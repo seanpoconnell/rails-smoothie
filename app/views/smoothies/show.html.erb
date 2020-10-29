@@ -8,8 +8,11 @@
       <h1>
         <%= @smoothie.name %>
       </h1>
-      <h5>Ingredients</h5>
-      <h5>Method</h5>
+      <h5 class="mb-3">Ingredients</h5>
+        <% @smoothie.doses.each do |dose| %>
+          <ul class="pl-0"><h7><%= dose.description %> <%= dose.ingredient.name %></h7></ul>
+        <% end %>
+      <%= link_to 'Add Ingredient', new_smoothy_dose_path(@smoothie) %>
     </div>
   </div>
 </div>

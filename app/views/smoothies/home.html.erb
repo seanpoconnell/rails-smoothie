@@ -4,7 +4,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </div>
 
-
 <div class="container" style="display: flex; justify-content: space-around;">
 
   <div class="row">
@@ -29,8 +28,6 @@
   <div class="container" style="width: 25em; margin-bottom: 25em; margin-top: 10em">
     <%= simple_form_for @smoothie do |f| %>
       <%= f.input :name , label: "Smoothie name" %>
-      <%= f.input :doses , label: "Dosage" %>
-      <%= f.input :ingredients , label: "Ingredient" %>
       <%= f.submit class:'btn btn-primary' %>
     <% end %>
   </div>
