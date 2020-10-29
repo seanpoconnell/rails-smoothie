@@ -12,6 +12,7 @@
         <% @smoothie.doses.each do |dose| %>
           <ul class="pl-0"><h7><%= dose.description %> <%= dose.ingredient.name %></h7></ul>
         <% end %>
+      <%= link_to 'Add Ingredient', new_smoothy_dose_path(@smoothie) %>
     </div>
   </div>
 </div>

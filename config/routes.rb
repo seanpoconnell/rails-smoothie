@@ -6,3 +6,5 @@ Rails.application.routes.draw do
     resources :doses, only: [:create, :new]
   end
 end
+
+#timestamp 31:27

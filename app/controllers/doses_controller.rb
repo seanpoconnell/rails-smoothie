@@ -18,7 +18,6 @@ class DosesController < ApplicationController
     # instance - info - id
     # @human.name (Sean) = @name (5)
     @dose.save
-    raise
     redirect_to smoothy_path(@smoothie)
   end
 
