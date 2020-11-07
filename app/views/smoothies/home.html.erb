@@ -12,17 +12,22 @@
       <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
         <div class="card m-0 p-0">
               <img class="card-img-top crop" style="position: relative;" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
-              <div class="card-body">
-                <h5 class="card-title">
+              <div class="card-body" style="text-align: center;">
+                <%# Smoothie name %>
+                <h5 class="card-title" style="font-family: cookie; font-size: 40px">
                   <%= smoothie.name %>
-                </h5>
-                <%= link_to 'Recipe', smoothy_path(smoothie), class: "btn btn-primary" %>
-                <%# nice button bottom:114px %>
-                <div id="btn" style="width:40%;">
-                    <span class="noselect" style="font-size: 25px;">Recipe</span>
-                    <div id="circle"></div>
-                  </div>
+                </h5>                
+                <%# button %>
+                <div style="display: flex; justify-content: center;">
+                  <%= link_to smoothy_path(smoothie) do %>
+                    <div class="" id="btn" style="width:40%;">
+                        <span class="noselect" style="font-size: 25px;">Recipe</span>
+                        <div id="circle"></div>
+                    </div>
+                  <% end %>
                 </div>
+              </div>
+                
         </div>
       </div>
     <% end %>
