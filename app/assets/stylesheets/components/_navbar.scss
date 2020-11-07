@@ -16,3 +16,17 @@
   justify-content: space-between;
   background-color: rgba(255,255,255,0.9);
 }
+
+.navbar-item-color:hover {
+  color: rgb(58, 56, 56);
+  text-decoration: none;
+}
+
+.navbar-item-color {
+  color: rgba(58, 56, 56, 0.521);
+}
+
+.navbar-item-font {
+  font-family: "Nunito", "Helvetica", "sans-serif";
+  font-weight: 600;
+}
