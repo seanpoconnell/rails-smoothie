@@ -6,18 +6,28 @@
 
 <div class="container mb-4" style="display: flex; justify-content: space-around;">
 
+<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
   <div class="row">
     <% @smoothies.each do |smoothie| %>
       <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
         <div class="card m-0 p-0">
-              <img class="card-img-top crop" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
-              <div class="card-body">
-                <h5 class="card-title">
+              <img class="card-img-top crop" style="position: relative;" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
+              <div class="card-body" style="text-align: center;">
+                <%# Smoothie name %>
+                <h5 class="card-title" style="font-family: cookie; font-size: 40px">
                   <%= smoothie.name %>
-                </h5>
-                <p class="card-text">some text</p>
-                <%= link_to 'Recipe', smoothy_path(smoothie), class: "btn btn-primary" %>
+                </h5>                
+                <%# button %>
+                <div style="display: flex; justify-content: center;">
+                  <%= link_to smoothy_path(smoothie) do %>
+                    <div class="" id="btn" style="width:40%;">
+                        <span class="noselect" style="font-size: 25px;">Recipe</span>
+                        <div id="circle"></div>
+                    </div>
+                  <% end %>
+                </div>
               </div>
+                
         </div>
       </div>
     <% end %>
@@ -25,24 +35,3 @@
 </div>
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <div class="container">
-          <div class="container" style="width: 25em;">
-            <%= simple_form_for @smoothie do |f| %>
-              <%= f.input :name , label: "Smoothie name" %>
-              <%= f.submit class:'btn btn-primary' %>
-            <% end %>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</div>
