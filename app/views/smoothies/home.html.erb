@@ -4,7 +4,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </div>
 
-<div class="container" style="display: flex; justify-content: space-around;">
+<div class="container mb-4" style="display: flex; justify-content: space-around;">
 
   <div class="row">
     <% @smoothies.each do |smoothie| %>
@@ -24,11 +24,25 @@
   <div>
 </div>
 
-<div class="container">
-  <div class="container" style="width: 25em; margin-bottom: 25em; margin-top: 10em">
-    <%= simple_form_for @smoothie do |f| %>
-      <%= f.input :name , label: "Smoothie name" %>
-      <%= f.submit class:'btn btn-primary' %>
-    <% end %>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="container">
+          <div class="container" style="width: 25em;">
+            <%= simple_form_for @smoothie do |f| %>
+              <%= f.input :name , label: "Smoothie name" %>
+              <%= f.submit class:'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+        
+      </div>
+    </div>
   </div>
 </div>
