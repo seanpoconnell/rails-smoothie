@@ -15,10 +15,32 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Create Smoothie", "#", class: "navbar-item-color navbar-item-font " %>
+        <!-- Button trigger modal -->
+        <button class="navbar-item-color navbar-item-font box" data-toggle="modal" data-target="#exampleModal">Create Smoothie</button>
       </li>
     </ul>
   </div>
   
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="container">
+          <div class="container" style="width: 25em;">
+            <%= simple_form_for @smoothie do |f| %>
+              <%= f.input :name , label: "Smoothie name" %>
+              <%= f.submit class:'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
