@@ -33,10 +33,12 @@
         </button>
         <div class="container">
           <div class="container" style="width: 25em;">
-            <%= simple_form_for @smoothie do |f| %>
-              <%= f.input :name , label: "Smoothie name" %>
-              <%= f.submit class:'btn btn-primary' %>
-            <% end %>
+            <span style="font-size: 2em;">
+              <%= simple_form_for @smoothie do |f| %>
+                <%= f.input :name , label: "Smoothie name" %>
+                <%= f.submit class:'btn btn-primary' %>
+              <% end %>
+            </span>
           </div>
         </div>
         
