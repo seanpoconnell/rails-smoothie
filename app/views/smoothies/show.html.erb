@@ -1,3 +1,4 @@
+<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
 <div class="container-fluid">
   <div class="row">
     <div class="col">
@@ -5,12 +6,12 @@
     </div>
 
     <div class="col">
-      <h1>
+      <h1 style="font-size: 4em;">
         <%= @smoothie.name %>
       </h1>
-      <h5 class="mb-3">Ingredients</h5>
+      <%# <h5 class="mb-3" style="font-size: 3em;">Ingredients</h5> %>
         <% @smoothie.doses.each do |dose| %>
-          <ul class="pl-0"><h7><%= dose.description %> <%= dose.ingredient.name %></h7></ul>
+          <ul class="pl-0"><h5 style="font-size: 1.5em;"><%= dose.description %> <%= dose.ingredient.name %></h5></ul>
         <% end %>
       <%= link_to 'Add Ingredient', new_smoothy_dose_path(@smoothie) %>
     </div>
