@@ -19,6 +19,12 @@ class SmoothiesController < ApplicationController
     end
   end
 
+  def destroy
+    @smoothie = Smoothie.find(params[:id])
+    @smoothie.destroy
+    redirect_to root_path
+  end
+
   private
 
   def smoothie_params
