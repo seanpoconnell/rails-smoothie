@@ -28,6 +28,6 @@ class SmoothiesController < ApplicationController
   private
 
   def smoothie_params
-    params.require(:smoothie).permit(:name, :ingredient, :dose)
+    params.require(:smoothie).permit(:name, :ingredient, :dose, :photo)
   end
 end
