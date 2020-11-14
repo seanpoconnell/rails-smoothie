@@ -11,23 +11,42 @@
     <% @smoothies.each do |smoothie| %>
       <div class="col-xs-12 col-sm-6 col-md-4 mb-3">
         <div class="card m-0 p-0">
-              <img class="card-img-top crop" style="position: relative;" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
-              <div class="card-body" style="text-align: center;">
-                <%# Smoothie name %>
-                <h5 class="card-title" style="font-family: cookie; font-size: 40px">
-                  <%= smoothie.name %>
-                </h5>                
-                <%# button %>
-                <div style="display: flex; justify-content: center;">
-                  <%= link_to smoothy_path(smoothie) do %>
-                    <div class="" id="btn" style="width:40%;">
-                        <span class="noselect" style="font-size: 25px;">Recipe</span>
-                        <div id="circle"></div>
-                    </div>
-                  <% end %>
+              <% if smoothie.photo.present? %>
+                <%= cl_image_tag smoothie.photo.key, class: "card-img-top crop", style: "position: relative;" %>
+                <div class="card-body" style="text-align: center;">
+                  <%# Smoothie name %>
+                  <h5 class="card-title" style="font-family: cookie; font-size: 40px">
+                    <%= smoothie.name %>
+                  </h5>                
+                  <%# button %>
+                  <div style="display: flex; justify-content: center;">
+                    <%= link_to smoothy_path(smoothie) do %>
+                      <div class="" id="btn" style="width:40%;">
+                          <span class="noselect" style="font-size: 25px;">Recipe</span>
+                          <div id="circle"></div>
+                      </div>
+                    <% end %>
+                  </div>
                 </div>
-              </div>
-                
+              <% else %>
+                <img class="card-img-top crop" style="position: relative;" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
+                <div class="card-body" style="text-align: center;">
+                  <%# Smoothie name %>
+                  <h5 class="card-title" style="font-family: cookie; font-size: 40px">
+                    <%= smoothie.name %>
+                  </h5>                
+                  <%# button %>
+                  <div style="display: flex; justify-content: center;">
+                    <%= link_to smoothy_path(smoothie) do %>
+                      <div class="" id="btn" style="width:40%;">
+                          <span class="noselect" style="font-size: 25px;">Recipe</span>
+                          <div id="circle"></div>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+              <%# Once this starts to disappear stop clicking undo or you will go beyond what I remember what works and what does not. %>
         </div>
       </div>
     <% end %>

@@ -2,8 +2,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col">
-        <%= cl_image_tag @smoothie.photo.key, class: "clpic" %>
-        <%# <img style="width: 100%; height: auto;" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies"> %>
+        <% if @smoothie.photo.present? %>
+          <%= cl_image_tag @smoothie.photo.key, class: "clpic" %>
+        <% else %>
+          <img class="clpic" src="https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=652&q=80" alt="Smoothies">
+        <% end %>
     </div>
 
     <div class="col">
